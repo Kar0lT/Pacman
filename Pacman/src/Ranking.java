@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 public class Ranking extends JPanel {
-    private static final String RANKING_FILE = "ranking.dat";
+    private static final String RANKING_FILE = "resources/ranking.dat";
 
     private DefaultListModel<Score> rankingModel;
     private JList<Score> rankingList;

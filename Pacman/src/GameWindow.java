@@ -27,7 +27,10 @@ public class GameWindow extends JFrame {
         GameController gameController = new GameController(gameModel, gameView, this);
         this.gameController = gameController;
 
-        gameController.startGame();
+        setContentPane(gameView); // Dodanie GameView do kontenera okna
+        pack();
+        setLocationRelativeTo(null);
+        setVisible(true);
     }
 }
 

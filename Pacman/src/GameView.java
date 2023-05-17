@@ -15,6 +15,7 @@ public class GameView extends JPanel {
         this.gameModel = gameModel;
         loadImages();
         setPreferredSize(new Dimension(800, 600));
+        setFocusable(true);
     }
 
     private void loadImages() {
