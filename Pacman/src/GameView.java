@@ -10,12 +10,18 @@ public class GameView extends JPanel {
     private BufferedImage pacmanImage;
     private BufferedImage ghostImage;
     private BufferedImage powerUpImage;
+    private JLabel scoreLabel;
+    private JLabel livesLabel;
 
     public GameView(GameModel gameModel) {
         this.gameModel = gameModel;
         loadImages();
         setPreferredSize(new Dimension(800, 600));
         setFocusable(true);
+        scoreLabel = new JLabel();
+        livesLabel = new JLabel();
+        add(scoreLabel);
+        add(livesLabel);
     }
 
     private void loadImages() {
@@ -35,6 +41,11 @@ public class GameView extends JPanel {
         drawPacman(g);
         drawGhosts(g);
         drawPowerUps(g);
+        // Aktualizacja informacji o wyniku i żywotności
+        scoreLabel.setText("Score: " + gameModel.getScore());
+        livesLabel.setText("Lives: " + gameModel.getLives());
+        scoreLabel.setBounds(10, 10, 100, 20);
+        livesLabel.setBounds(10, 40, 100, 20);
     }
 
     private void drawBoard(Graphics g) {
